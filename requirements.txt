@@ -1,0 +1,6 @@
+pyspark==4.0.0
+pandas>=2.0
+faker>=25.0
+pytest>=8.0
+kagglehub>=0.2
+numpy>=1.26

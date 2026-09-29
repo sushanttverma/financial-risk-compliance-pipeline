@@ -1,0 +1,87 @@
+version: "3.7"
+
+# Hadoop + Hive stack for PIPELINE_PROFILE=hadoop.
+#   docker compose up -d
+# HDFS namenode UI: http://localhost:9870
+# Beeline:          beeline -u jdbc:hive2://localhost:10000
+# Spark jobs run from the host via spark-submit (PYSpark wheel bundles the Hadoop
+# client); they reach HDFS on localhost:8020 and the metastore on localhost:9083.
+
+services:
+  namenode:
+    image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-eclipsephi
+    container_name: namenode
+    restart: unless-stopped
+    ports:
+      - "8020:8020"
+      - "9870:9870"
+    env_file:
+      - ./hadoop.env
+    volumes:
+      - namenode_data:/hadoop/dfs/name
+
+  datanode:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-eclipsephi
+    container_name: datanode
+    restart: unless-stopped
+    depends_on:
+      - namenode
+    env_file:
+      - ./hadoop.env
+    volumes:
+      - datanode_data:/hadoop/dfs/data
+
+  metastore-db:
+    image: postgres:15
+    container_name: metastore-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: metastore
+      POSTGRES_USER: hive
+      POSTGRES_PASSWORD: hive
+    volumes:
+      - metastore_db:/var/lib/postgresql/data
+
+  metastore:
+    image: apache/hive:4.0.0
+    container_name: hive-metastore
+    restart: unless-stopped
+    depends_on:
+      - namenode
+      - metastore-db
+    environment:
+      SERVICE_NAME: metastore
+      DB_DRIVER: postgres
+      SERVICE_OPTS: >-
+        -Djavax.jdo.option.ConnectionDriverName=org.postgresql.Driver
+        -Djavax.jdo.option.ConnectionURL=jdbc:postgresql://metastore-db:5432/metastore
+        -Djavax.jdo.option.ConnectionUserName=hive
+        -Djavax.jdo.option.ConnectionPassword=hive
+        -Dfs.defaultFS=hdfs://namenode:8020
+        -Dhive.metastore.warehouse.dir=/user/hive/warehouse
+    ports:
+      - "9083:9083"
+
+  hiveserver2:
+    image: apache/hive:4.0.0
+    container_name: hive-server2
+    restart: unless-stopped
+    depends_on:
+      - metastore
+    environment:
+      SERVICE_NAME: hiveserver2
+      DB_DRIVER: postgres
+      SERVICE_OPTS: >-
+        -Djavax.jdo.option.ConnectionDriverName=org.postgresql.Driver
+        -Djavax.jdo.option.ConnectionURL=jdbc:postgresql://metastore-db:5432/metastore
+        -Djavax.jdo.option.ConnectionUserName=hive
+        -Djavax.jdo.option.ConnectionPassword=hive
+        -Dfs.defaultFS=hdfs://namenode:8020
+        -Dhive.metastore.uris=thrift://hive-metastore:9083
+    ports:
+      - "10000:10000"
+
+volumes:
+  namenode_data:
+  datanode_data:
+  metastore_db:

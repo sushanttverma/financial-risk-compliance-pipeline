@@ -1,0 +1,253 @@
+state,segment,account_type,customers
+Telangana,Retail,Savings,236
+Punjab,Retail,Savings,217
+Uttarakhand,Retail,Savings,210
+Bihar,Retail,Savings,209
+West Bengal,Retail,Savings,203
+Gujarat,Retail,Savings,202
+Assam,Retail,Savings,200
+Goa,Retail,Savings,193
+Maharashtra,Retail,Savings,192
+Uttar Pradesh,Retail,Savings,191
+Nagaland,Retail,Savings,188
+Odisha,Retail,Savings,187
+Rajasthan,Retail,Savings,187
+Tripura,Retail,Savings,185
+Mizoram,Retail,Savings,184
+Kerala,Retail,Savings,183
+Arunachal Pradesh,Retail,Savings,183
+Manipur,Retail,Savings,183
+Karnataka,Retail,Savings,180
+Sikkim,Retail,Savings,179
+Madhya Pradesh,Retail,Savings,179
+Haryana,Retail,Savings,178
+Chhattisgarh,Retail,Savings,178
+Meghalaya,Retail,Savings,174
+Jharkhand,Retail,Savings,171
+Andhra Pradesh,Retail,Savings,169
+Himachal Pradesh,Retail,Savings,166
+Tamil Nadu,Retail,Savings,159
+Goa,Retail,Current,103
+Chhattisgarh,Retail,Current,101
+Maharashtra,Retail,Current,96
+Karnataka,Retail,Current,95
+Uttar Pradesh,Retail,Current,95
+Tripura,Retail,Current,94
+Himachal Pradesh,Retail,Current,92
+Gujarat,Retail,Current,91
+West Bengal,Retail,Current,88
+Mizoram,Retail,Current,88
+Meghalaya,Retail,Current,87
+Manipur,Retail,Current,85
+Rajasthan,Retail,Current,85
+Bihar,Retail,Wallet,84
+Punjab,Retail,Current,84
+Assam,Retail,Current,83
+Nagaland,Retail,Current,83
+Bihar,Retail,Current,83
+Odisha,Retail,Current,82
+Telangana,Retail,Current,82
+Arunachal Pradesh,Retail,Current,79
+Tamil Nadu,Retail,Current,76
+Jharkhand,Retail,Current,75
+Kerala,Retail,Current,75
+Madhya Pradesh,Retail,Current,73
+Sikkim,Retail,Current,72
+Andhra Pradesh,Retail,Current,72
+Uttarakhand,Retail,Current,71
+Uttar Pradesh,SME,Savings,70
+Haryana,Retail,Current,69
+Himachal Pradesh,SME,Savings,65
+Meghalaya,Retail,Wallet,63
+Jharkhand,SME,Savings,61
+Bihar,SME,Savings,61
+Sikkim,SME,Savings,59
+Tripura,Retail,Wallet,59
+Gujarat,Retail,Wallet,59
+Uttar Pradesh,Retail,Wallet,59
+Arunachal Pradesh,Retail,Wallet,57
+Tripura,SME,Savings,56
+Haryana,Retail,Wallet,56
+Rajasthan,Retail,Wallet,55
+Mizoram,Retail,Wallet,55
+Karnataka,SME,Savings,55
+Goa,Retail,Wallet,54
+Meghalaya,SME,Savings,54
+Punjab,SME,Savings,54
+Madhya Pradesh,SME,Savings,53
+Assam,SME,Savings,53
+Uttarakhand,Retail,Wallet,53
+Andhra Pradesh,Retail,Wallet,52
+Telangana,Retail,Wallet,52
+Mizoram,SME,Savings,52
+West Bengal,Retail,Wallet,51
+Goa,SME,Savings,51
+Nagaland,SME,Savings,50
+Maharashtra,Retail,Wallet,50
+Jharkhand,Retail,Wallet,49
+Madhya Pradesh,Retail,Wallet,49
+Rajasthan,SME,Savings,49
+Manipur,SME,Savings,48
+Uttarakhand,SME,Savings,48
+Assam,Retail,Wallet,48
+Andhra Pradesh,SME,Savings,48
+Maharashtra,SME,Savings,47
+Arunachal Pradesh,SME,Savings,47
+West Bengal,SME,Savings,46
+Tamil Nadu,Retail,Wallet,46
+Chhattisgarh,Retail,Wallet,45
+Punjab,Retail,Wallet,45
+Odisha,Retail,Wallet,44
+Haryana,SME,Savings,44
+Manipur,Retail,Wallet,44
+Chhattisgarh,SME,Savings,43
+Gujarat,SME,Savings,43
+Himachal Pradesh,Retail,Wallet,42
+Karnataka,Retail,Wallet,42
+Nagaland,Retail,Wallet,41
+Sikkim,Retail,Wallet,40
+Kerala,Retail,Wallet,39
+Odisha,SME,Savings,39
+Kerala,SME,Savings,38
+Tamil Nadu,SME,Savings,38
+Telangana,SME,Savings,37
+Gujarat,SME,Current,29
+Assam,SME,Current,28
+Tamil Nadu,SME,Current,25
+Uttar Pradesh,SME,Current,25
+Madhya Pradesh,SME,Current,24
+Kerala,SME,Current,24
+Himachal Pradesh,SME,Current,24
+Chhattisgarh,SME,Current,24
+Meghalaya,SME,Current,23
+Karnataka,SME,Current,22
+Punjab,SME,Current,22
+Uttarakhand,SME,Current,22
+Punjab,Corporate,Savings,22
+Mizoram,SME,Current,22
+Nagaland,SME,Current,22
+Jharkhand,SME,Current,22
+Sikkim,SME,Current,22
+Manipur,SME,Current,22
+Bihar,SME,Wallet,21
+Maharashtra,SME,Current,21
+Kerala,SME,Wallet,21
+Karnataka,SME,Wallet,21
+Tripura,SME,Current,20
+Haryana,SME,Current,20
+West Bengal,SME,Current,20
+Goa,SME,Current,20
+Rajasthan,SME,Current,19
+Bihar,SME,Current,19
+Haryana,SME,Wallet,18
+Kerala,Corporate,Savings,18
+Maharashtra,Corporate,Savings,18
+Telangana,SME,Current,17
+Sikkim,Corporate,Savings,17
+Assam,Corporate,Savings,17
+Uttarakhand,Corporate,Savings,17
+Odisha,SME,Current,17
+West Bengal,Corporate,Savings,16
+Tamil Nadu,Corporate,Savings,16
+Madhya Pradesh,SME,Wallet,16
+Goa,SME,Wallet,16
+Andhra Pradesh,SME,Current,16
+Rajasthan,SME,Wallet,16
+Meghalaya,Corporate,Savings,15
+Mizoram,SME,Wallet,15
+Arunachal Pradesh,SME,Current,15
+Himachal Pradesh,Corporate,Savings,15
+Bihar,Corporate,Savings,15
+Rajasthan,Corporate,Savings,14
+Himachal Pradesh,SME,Wallet,14
+Chhattisgarh,Corporate,Savings,14
+Haryana,Corporate,Savings,14
+Maharashtra,SME,Wallet,13
+Punjab,SME,Wallet,13
+Mizoram,Corporate,Savings,13
+Sikkim,SME,Wallet,13
+Odisha,Corporate,Savings,13
+Chhattisgarh,SME,Wallet,13
+Tamil Nadu,SME,Wallet,12
+Tripura,Corporate,Savings,12
+Gujarat,Corporate,Savings,12
+Tripura,SME,Wallet,12
+Madhya Pradesh,Corporate,Savings,12
+Jharkhand,Corporate,Savings,12
+West Bengal,SME,Wallet,11
+Meghalaya,SME,Wallet,11
+Nagaland,Corporate,Savings,11
+Karnataka,Corporate,Savings,11
+Assam,SME,Wallet,11
+Arunachal Pradesh,SME,Wallet,11
+Manipur,Corporate,Savings,11
+Uttar Pradesh,Corporate,Savings,10
+Odisha,SME,Wallet,10
+Andhra Pradesh,Corporate,Savings,10
+Gujarat,SME,Wallet,10
+Nagaland,SME,Wallet,10
+Manipur,SME,Wallet,9
+Telangana,SME,Wallet,9
+Arunachal Pradesh,Corporate,Savings,9
+Uttarakhand,SME,Wallet,9
+Madhya Pradesh,Corporate,Current,9
+Kerala,Corporate,Current,9
+Uttar Pradesh,SME,Wallet,8
+Goa,Corporate,Savings,8
+Bihar,Corporate,Current,8
+Chhattisgarh,Corporate,Current,8
+Andhra Pradesh,SME,Wallet,8
+Nagaland,Corporate,Current,7
+Telangana,Corporate,Savings,7
+Uttarakhand,Corporate,Current,7
+Karnataka,Corporate,Current,7
+Mizoram,Corporate,Current,6
+Rajasthan,Corporate,Current,6
+Maharashtra,Corporate,Current,6
+Odisha,Corporate,Wallet,6
+Assam,Corporate,Current,6
+Bihar,Corporate,Wallet,5
+West Bengal,Corporate,Current,5
+Meghalaya,Corporate,Wallet,5
+Uttar Pradesh,Corporate,Wallet,5
+Uttar Pradesh,Corporate,Current,5
+Karnataka,Corporate,Wallet,5
+Goa,Corporate,Current,5
+Jharkhand,Corporate,Current,5
+Goa,Corporate,Wallet,5
+Punjab,Corporate,Current,5
+Jharkhand,Corporate,Wallet,4
+Tamil Nadu,Corporate,Wallet,4
+Sikkim,Corporate,Wallet,4
+Telangana,Corporate,Wallet,4
+Haryana,Corporate,Current,4
+Rajasthan,Corporate,Wallet,4
+Tripura,Corporate,Current,4
+Sikkim,Corporate,Current,4
+Andhra Pradesh,Corporate,Current,4
+Tripura,Corporate,Wallet,4
+Telangana,Corporate,Current,4
+West Bengal,Corporate,Wallet,3
+Meghalaya,Corporate,Current,3
+Odisha,Corporate,Current,3
+Andhra Pradesh,Corporate,Wallet,3
+Himachal Pradesh,Corporate,Wallet,3
+Nagaland,Corporate,Wallet,3
+Tamil Nadu,Corporate,Current,3
+Manipur,Corporate,Wallet,3
+Haryana,Corporate,Wallet,3
+Jharkhand,SME,Wallet,3
+Uttarakhand,Corporate,Wallet,3
+Himachal Pradesh,Corporate,Current,3
+Gujarat,Corporate,Wallet,2
+Maharashtra,Corporate,Wallet,2
+Manipur,Corporate,Current,2
+Mizoram,Corporate,Wallet,2
+Gujarat,Corporate,Current,2
+Punjab,Corporate,Wallet,2
+Arunachal Pradesh,Corporate,Wallet,1
+Assam,Corporate,Wallet,1
+Kerala,Corporate,Wallet,1
+Madhya Pradesh,Corporate,Wallet,1
+Chhattisgarh,Corporate,Wallet,1
+Arunachal Pradesh,Corporate,Current,1

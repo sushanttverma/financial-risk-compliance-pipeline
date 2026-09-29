@@ -1,0 +1,4 @@
+rule_code,rule_name,alerts,total_amount
+R1,Large Cash Transaction,1717,5575231930.249999
+R5,Watchlist Hit,201,41954545.089999996
+R6,KYC Gap,481135,90159751559.0399

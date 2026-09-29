@@ -1,0 +1,72 @@
+{
+  "r1": {
+    "code": "R1",
+    "name": "Large Cash Transaction",
+    "types": ["CASH_IN", "CASH_OUT"],
+    "min_amount": 1000000,
+    "weight": 10,
+    "regulation_note": "Cash transactions at or above INR 10,00,000 are reportable to FIU-IND under the PMLA reporting rules."
+  },
+  "r2": {
+    "code": "R2",
+    "name": "Structuring",
+    "min_count": 3,
+    "min_amount": 900000,
+    "max_amount": 1000000,
+    "window_days": 7,
+    "weight": 30,
+    "regulation_note": "Multiple transactions kept just below the CTR threshold indicate structuring; report as suspicious activity."
+  },
+  "r3": {
+    "code": "R3",
+    "name": "Rapid Pass-Through",
+    "out_pct": 0.9,
+    "window_hours": 24,
+    "weight": 35,
+    "regulation_note": "Funds moved out within 24 hours of receipt indicate mule-account behaviour."
+  },
+  "r4": {
+    "code": "R4",
+    "name": "Dormant Account Reactivation",
+    "dormant_days": 180,
+    "min_amount": 500000,
+    "weight": 20,
+    "regulation_note": "Long-dormant accounts suddenly moving large amounts are a classic takeover indicator."
+  },
+  "r5": {
+    "code": "R5",
+    "name": "Watchlist Hit",
+    "weight": 50,
+    "regulation_note": "Any transaction touching a sanctioned or watchlisted party must be reviewed the same day."
+  },
+  "r6": {
+    "code": "R6",
+    "name": "KYC Gap",
+    "weight": 15,
+    "regulation_note": "Transactions on accounts with missing or expired KYC violate RBI customer due-diligence norms."
+  },
+  "r7": {
+    "code": "R7",
+    "name": "High Velocity",
+    "max_txn_per_hour": 20,
+    "weight": 15,
+    "regulation_note": "Abnormal transaction frequency suggests automated or bot-driven account abuse."
+  },
+  "r8": {
+    "code": "R8",
+    "name": "Balance Drain",
+    "drain_pct": 0.95,
+    "window_hours": 6,
+    "weight": 40,
+    "regulation_note": "Account emptied by transfer followed by immediate cash withdrawal is a typical cash-out pattern."
+  },
+  "kyc_high_bonus": 10,
+  "bands": {
+    "medium_min": 30,
+    "high_min": 70
+  },
+  "dq": {
+    "balance_tolerance": 1.0,
+    "valid_types": ["CASH_IN", "CASH_OUT", "DEBIT", "PAYMENT", "TRANSFER"]
+  }
+}

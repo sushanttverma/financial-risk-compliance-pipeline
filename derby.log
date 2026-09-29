@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Sep 29 17:35:23 UTC 2026:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instance a816c00e-01a0-ee3c-46c7-000009ef8d80 
+on database directory /home/sushant/Developer/Data Projects/financial-risk-compliance-pipeline/metastore_db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@1dbd16a6 
+Loaded from file:/home/sushant/Developer/Data%20Projects/financial-risk-compliance-pipeline/.venv/lib/python3.12/site-packages/pyspark/jars/derby-10.16.1.1.jar
+java.vendor=Homebrew
+java.runtime.version=17.0.20.1+0
+user.dir=/home/sushant/Developer/Data Projects/financial-risk-compliance-pipeline
+os.name=Linux
+os.arch=amd64
+os.version=6.18.33.2-microsoft-standard-WSL2
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

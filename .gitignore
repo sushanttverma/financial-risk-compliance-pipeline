@@ -1,0 +1,9 @@
+.venv/
+metastore_db/
+warehouse/
+logs/
+landing/
+__pycache__/
+*.pyc
+.pytest_cache/
+data_gen/output/

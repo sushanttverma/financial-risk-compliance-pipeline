@@ -1,0 +1,7 @@
+rule_code,rule_name,alerts,fraud_hits,precision_pct
+R1,Large Cash Transaction,1716,1300,75.8
+R4,Dormant Account Reactivation,27529,635,2.3
+R6,KYC Gap,481135,1099,0.2
+R5,Watchlist Hit,201,0,0.0
+R3,Rapid Pass-Through,397,0,0.0
+R8,Balance Drain,68,0,0.0

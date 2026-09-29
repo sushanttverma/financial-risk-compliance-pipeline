@@ -1,0 +1,126 @@
+rule_code,rule_name,customer_id,customer_name,state,segment,risk_score,risk_band,amount,details
+R3,Rapid Pass-Through,C6923502,Yashvi Bhatt,Manipur,SME,475,High,1237244.57,moved 95.3% out within 24h of receipt
+R8,Balance Drain,C6923502,Yashvi Bhatt,Manipur,SME,475,High,1237244.57,"drained >= 95% balance, cashed out within 6h"
+R3,Rapid Pass-Through,C6923526,Hemal Gokhale,Nagaland,Retail,385,High,1908426.16,moved 99.0% out within 24h of receipt
+R8,Balance Drain,C6923526,Hemal Gokhale,Nagaland,Retail,385,High,1908426.16,"drained >= 95% balance, cashed out within 6h"
+R3,Rapid Pass-Through,C6923576,Leela Purohit,Punjab,Retail,255,High,1684868.97,moved 96.6% out within 24h of receipt
+R8,Balance Drain,C6923576,Leela Purohit,Punjab,Retail,255,High,1684868.97,"drained >= 95% balance, cashed out within 6h"
+R3,Rapid Pass-Through,C6923551,Barkha Shroff,Meghalaya,Retail,220,High,1957892.64,moved 96.2% out within 24h of receipt
+R3,Rapid Pass-Through,C6923521,Owen Sastry,Chhattisgarh,Retail,220,High,1911579.61,moved 93.3% out within 24h of receipt
+R3,Rapid Pass-Through,C6923518,Lakshmi Upadhyay,Punjab,Corporate,220,High,1325927.05,moved 96.6% out within 24h of receipt
+R6,KYC Gap,C5881482,Harish Bhasin,Telangana,Retail,150,High,444898.97,receiver kyc Verified 2024-12-23
+R3,Rapid Pass-Through,C6923557,Christopher Buch,Telangana,SME,115,High,1243862.09,moved 95.4% out within 24h of receipt
+R6,KYC Gap,C6407684,Mahika Mody,Haryana,Retail,90,High,2232257.71,receiver kyc Verified 2024-10-25
+R6,KYC Gap,C0703743,Kashvi Tripathi,Bihar,Retail,75,High,114490.39,receiver kyc Missing 2029-09-03
+R1,Large Cash Transaction,C4820594,Peter Shetty,Maharashtra,Retail,45,Medium,6377401.2,CASH_OUT of 6377401.2
+R4,Dormant Account Reactivation,C4820594,Peter Shetty,Maharashtra,Retail,45,Medium,6377401.2,"dormant 180+ days, first txn 6377401.2"
+R6,KYC Gap,C4820594,Peter Shetty,Maharashtra,Retail,45,Medium,6377401.2,sender kyc Verified 2023-12-22
+R1,Large Cash Transaction,C2593312,Mitali Nagarajan,Goa,Retail,45,Medium,1755647.81,CASH_OUT of 1755647.81
+R4,Dormant Account Reactivation,C2593312,Mitali Nagarajan,Goa,Retail,45,Medium,1755647.81,"dormant 180+ days, first txn 1755647.81"
+R6,KYC Gap,C2593312,Mitali Nagarajan,Goa,Retail,45,Medium,1755647.81,sender kyc Verified 2024-03-29
+R6,KYC Gap,C1225976,Jatin Nath,Karnataka,Retail,45,Medium,249365.63,receiver kyc Missing 2028-12-15
+R6,KYC Gap,C2370241,Jasmit Chada,Mizoram,Retail,45,Medium,63416.99,receiver kyc Missing 2031-09-22
+R6,KYC Gap,C0569349,Vasatika Dyal,Maharashtra,Retail,45,Medium,31887.18,receiver kyc Verified 2024-07-19
+R4,Dormant Account Reactivation,C1310370,Nitara Bassi,Himachal Pradesh,Retail,35,Medium,6377401.2,"dormant 180+ days, first txn 6377401.2"
+R6,KYC Gap,C1310370,Nitara Bassi,Himachal Pradesh,Retail,35,Medium,6377401.2,sender kyc Verified 2024-02-08
+R4,Dormant Account Reactivation,C0099679,Bimala Raju,Kerala,Retail,35,Medium,3912252.81,"dormant 180+ days, first txn 3912252.81"
+R6,KYC Gap,C0099679,Bimala Raju,Kerala,Retail,35,Medium,3912252.81,sender kyc Verified 2024-11-23
+R4,Dormant Account Reactivation,C3168244,Andrew Dara,Uttar Pradesh,SME,35,Medium,3191058.32,"dormant 180+ days, first txn 3191058.32"
+R6,KYC Gap,C3168244,Andrew Dara,Uttar Pradesh,SME,35,Medium,3191058.32,sender kyc Verified 2024-07-12
+R1,Large Cash Transaction,C0143412,Lekha Bajwa,Assam,SME,35,Medium,1152538.9,CASH_OUT of 1152538.9
+R6,KYC Gap,C0143412,Lekha Bajwa,Assam,SME,35,Medium,1152538.9,sender kyc Missing 2032-12-12
+R4,Dormant Account Reactivation,C1838700,Vaishnavi Mand,Uttar Pradesh,Corporate,35,Medium,561446.32,"dormant 180+ days, first txn 561446.32"
+R6,KYC Gap,C1838700,Vaishnavi Mand,Uttar Pradesh,Corporate,35,Medium,561446.32,sender kyc Verified 2024-11-08
+R1,Large Cash Transaction,C4850876,Jairaj Murthy,Andhra Pradesh,Retail,30,Medium,10000000.0,CASH_OUT of 1.0E7
+R4,Dormant Account Reactivation,C4850876,Jairaj Murthy,Andhra Pradesh,Retail,30,Medium,10000000.0,"dormant 180+ days, first txn 1.0E7"
+R1,Large Cash Transaction,C3476445,Dayita Verma,Haryana,SME,30,Medium,4009058.39,CASH_OUT of 4009058.39
+R4,Dormant Account Reactivation,C3476445,Dayita Verma,Haryana,SME,30,Medium,4009058.39,"dormant 180+ days, first txn 4009058.39"
+R1,Large Cash Transaction,C0662240,Tanvi Vyas,Gujarat,SME,30,Medium,3191058.32,CASH_OUT of 3191058.32
+R4,Dormant Account Reactivation,C0662240,Tanvi Vyas,Gujarat,SME,30,Medium,3191058.32,"dormant 180+ days, first txn 3191058.32"
+R1,Large Cash Transaction,C3079844,Warjas Chhabra,Tamil Nadu,Retail,30,Medium,2216437.25,CASH_OUT of 2216437.25
+R4,Dormant Account Reactivation,C3079844,Warjas Chhabra,Tamil Nadu,Retail,30,Medium,2216437.25,"dormant 180+ days, first txn 2216437.25"
+R1,Large Cash Transaction,C0601761,Deepa Rau,Telangana,Retail,30,Medium,1548376.44,CASH_OUT of 1548376.44
+R4,Dormant Account Reactivation,C0601761,Deepa Rau,Telangana,Retail,30,Medium,1548376.44,"dormant 180+ days, first txn 1548376.44"
+R4,Dormant Account Reactivation,C0427904,George Shenoy,Uttarakhand,Retail,30,Medium,1548376.44,"dormant 180+ days, first txn 1548376.44"
+R1,Large Cash Transaction,C6673191,Ansh Ramaswamy,Punjab,Retail,30,Medium,1539474.57,CASH_OUT of 1539474.57
+R4,Dormant Account Reactivation,C6673191,Ansh Ramaswamy,Punjab,Retail,30,Medium,1539474.57,"dormant 180+ days, first txn 1539474.57"
+R1,Large Cash Transaction,C0281889,Chaitaly Yogi,Manipur,SME,30,Medium,1312694.5,CASH_OUT of 1312694.5
+R4,Dormant Account Reactivation,C0281889,Chaitaly Yogi,Manipur,SME,30,Medium,1312694.5,"dormant 180+ days, first txn 1312694.5"
+R1,Large Cash Transaction,C1241396,Divya Bath,Arunachal Pradesh,SME,30,Medium,1281113.84,CASH_OUT of 1281113.84
+R4,Dormant Account Reactivation,C1241396,Divya Bath,Arunachal Pradesh,SME,30,Medium,1281113.84,"dormant 180+ days, first txn 1281113.84"
+R1,Large Cash Transaction,C4165169,Ekaja Madan,Haryana,Retail,30,Medium,1232697.94,CASH_OUT of 1232697.94
+R4,Dormant Account Reactivation,C4165169,Ekaja Madan,Haryana,Retail,30,Medium,1232697.94,"dormant 180+ days, first txn 1232697.94"
+R1,Large Cash Transaction,C5767461,Aarush Vyas,Madhya Pradesh,Retail,25,Low,10000000.0,CASH_OUT of 1.0E7
+R6,KYC Gap,C5767461,Aarush Vyas,Madhya Pradesh,Retail,25,Low,10000000.0,sender kyc Missing 2032-09-30
+R1,Large Cash Transaction,C4986972,Fitan Purohit,Mizoram,Retail,25,Low,7758036.72,CASH_OUT of 7758036.72
+R6,KYC Gap,C4986972,Fitan Purohit,Mizoram,Retail,25,Low,7758036.72,sender kyc Verified 2024-11-10
+R1,Large Cash Transaction,C3974270,Kalpit Nagarajan,Tripura,Retail,25,Low,3846781.01,CASH_OUT of 3846781.01
+R6,KYC Gap,C3974270,Kalpit Nagarajan,Tripura,Retail,25,Low,3846781.01,sender kyc Verified 2024-03-12
+R1,Large Cash Transaction,C0142957,Krisha Mander,Chhattisgarh,Retail,25,Low,1819543.69,CASH_OUT of 1819543.69
+R6,KYC Gap,C0142957,Krisha Mander,Chhattisgarh,Retail,25,Low,1819543.69,sender kyc Verified 2024-10-16
+R4,Dormant Account Reactivation,C3385918,Ishani Ben,Rajasthan,Retail,20,Low,10000000.0,"dormant 180+ days, first txn 1.0E7"
+R4,Dormant Account Reactivation,C5158386,Raghav Khare,Punjab,Retail,20,Low,10000000.0,"dormant 180+ days, first txn 1.0E7"
+R4,Dormant Account Reactivation,C3191969,Victor Vala,Tripura,Retail,20,Low,10000000.0,"dormant 180+ days, first txn 1.0E7"
+R4,Dormant Account Reactivation,C4336227,Ekaja Nanda,Arunachal Pradesh,Retail,20,Low,3071270.72,"dormant 180+ days, first txn 3071270.72"
+R4,Dormant Account Reactivation,C6462431,Keya Iyengar,Uttarakhand,Corporate,20,Low,2194533.79,"dormant 180+ days, first txn 2194533.79"
+R4,Dormant Account Reactivation,C4426872,Daniel Sant,Andhra Pradesh,SME,20,Low,2079746.13,"dormant 180+ days, first txn 2079746.13"
+R4,Dormant Account Reactivation,C3536079,Anvi Vora,Kerala,Retail,20,Low,1810044.85,"dormant 180+ days, first txn 1810044.85"
+R4,Dormant Account Reactivation,C5156192,Jagdish Kar,Bihar,Retail,20,Low,1755647.81,"dormant 180+ days, first txn 1755647.81"
+R4,Dormant Account Reactivation,C6371494,Radha Sachdeva,Jharkhand,SME,20,Low,905919.58,"dormant 180+ days, first txn 905919.58"
+R4,Dormant Account Reactivation,C1650421,Arin Tak,Andhra Pradesh,Retail,20,Low,834495.09,"dormant 180+ days, first txn 834495.09"
+R4,Dormant Account Reactivation,C6779019,Anika Oommen,Tripura,Retail,20,Low,748139.48,"dormant 180+ days, first txn 748139.48"
+R4,Dormant Account Reactivation,C3647814,Arya Nagar,Uttarakhand,Retail,20,Low,537539.57,"dormant 180+ days, first txn 537539.57"
+R4,Dormant Account Reactivation,C5249613,Hemangini Choudhry,Karnataka,Retail,20,Low,508929.61,"dormant 180+ days, first txn 508929.61"
+R6,KYC Gap,C0360409,Kai Pandey,Karnataka,Retail,15,Low,10000000.0,receiver kyc Verified 2024-11-28
+R6,KYC Gap,C4250047,Faris Bhakta,Tamil Nadu,SME,15,Low,10000000.0,receiver kyc Verified 2025-01-26
+R6,KYC Gap,C6590034,Aadi Mitra,Nagaland,Retail,15,Low,3191058.32,receiver kyc Verified 2025-01-27
+R6,KYC Gap,C5297184,Pranav Sarma,Manipur,SME,15,Low,2232257.71,sender kyc Verified 2024-02-06
+R6,KYC Gap,C6484379,Vansha Konda,Uttarakhand,Retail,15,Low,2232257.71,receiver kyc Missing 2031-07-02
+R6,KYC Gap,C5157115,Ethan Tripathi,Bihar,SME,15,Low,2154005.71,sender kyc Missing 2027-03-08
+R6,KYC Gap,C6373398,Lohit Mital,Haryana,Retail,15,Low,1810044.85,receiver kyc Missing 2029-11-24
+R6,KYC Gap,C3228227,Yahvi Mital,Manipur,Retail,15,Low,1665334.68,sender kyc Verified 2024-10-10
+R6,KYC Gap,C1876102,Naksh Vasa,Himachal Pradesh,Retail,15,Low,946705.53,sender kyc Verified 2024-06-11
+R6,KYC Gap,C4622622,Elijah Kar,Telangana,Retail,15,Low,946705.53,receiver kyc Verified 2024-11-13
+R6,KYC Gap,C2262581,Michael Vig,Himachal Pradesh,Retail,15,Low,438859.1,sender kyc Verified 2024-03-15
+R6,KYC Gap,C1774319,Caleb Sanghvi,Rajasthan,Retail,15,Low,438859.1,receiver kyc Verified 2024-12-21
+R6,KYC Gap,C0898747,Nirja Deol,Nagaland,Retail,15,Low,417129.11,sender kyc Verified 2024-04-18
+R6,KYC Gap,C4545838,Krisha Sem,Manipur,Retail,15,Low,417103.68,sender kyc Verified 2024-09-05
+R6,KYC Gap,C5701265,Yutika Natt,Uttarakhand,Retail,15,Low,309488.9,receiver kyc Missing 2026-06-30
+R6,KYC Gap,C5665441,Madhav Gulati,Punjab,Retail,15,Low,302227.56,sender kyc Verified 2024-09-16
+R6,KYC Gap,C4194986,Gauri Khalsa,Kerala,Retail,15,Low,276298.49,sender kyc Pending 2025-01-25
+R6,KYC Gap,C2029123,Mitali Balasubramanian,Tamil Nadu,SME,15,Low,176549.59,sender kyc Verified 2024-08-01
+R6,KYC Gap,C3939245,Reva Dara,Tripura,Retail,15,Low,167606.49,receiver kyc Missing 2032-06-28
+R6,KYC Gap,C0331569,Nidhi Barad,Telangana,Retail,15,Low,144945.34,sender kyc Verified 2023-12-25
+R6,KYC Gap,C6856095,Tejas Padmanabhan,Sikkim,Retail,15,Low,123146.28,sender kyc Verified 2024-06-09
+R6,KYC Gap,C3956878,Harinakshi Jain,Uttar Pradesh,Retail,15,Low,71216.62,sender kyc Missing 2031-11-03
+R6,KYC Gap,C2219611,Vanya Barad,Madhya Pradesh,Retail,15,Low,59263.88,receiver kyc Verified 2023-12-02
+R6,KYC Gap,C4088011,Imaran Bora,Tamil Nadu,Retail,15,Low,59263.88,sender kyc Verified 2024-03-05
+R6,KYC Gap,C0587352,Rachita Thakur,West Bengal,SME,15,Low,57543.34,sender kyc Verified 2024-07-28
+R6,KYC Gap,C4448295,Urvashi Rai,Goa,Retail,15,Low,31887.18,sender kyc Verified 2024-12-18
+R6,KYC Gap,C1768624,Nicholas Nadig,Nagaland,Retail,15,Low,403.56,sender kyc Missing 2025-11-15
+R1,Large Cash Transaction,C4470142,Anirudh Kapur,Maharashtra,Retail,10,Low,10000000.0,CASH_OUT of 1.0E7
+R1,Large Cash Transaction,C2316614,Peter Gera,Meghalaya,Retail,10,Low,10000000.0,CASH_OUT of 1.0E7
+R1,Large Cash Transaction,C3109865,Oviya Magar,Assam,Retail,10,Low,10000000.0,CASH_OUT of 1.0E7
+R1,Large Cash Transaction,C2506530,Tejas Randhawa,Assam,Retail,10,Low,10000000.0,CASH_OUT of 1.0E7
+R1,Large Cash Transaction,C2390975,Ekavir Kaul,Jharkhand,SME,10,Low,10000000.0,CASH_OUT of 1.0E7
+R1,Large Cash Transaction,C3016070,Sudiksha Ahluwalia,Sikkim,Retail,10,Low,10000000.0,CASH_OUT of 1.0E7
+R1,Large Cash Transaction,C3815979,Ranbir Mandal,Andhra Pradesh,SME,10,Low,10000000.0,CASH_OUT of 1.0E7
+R1,Large Cash Transaction,C1123678,Noah Sangha,Haryana,Retail,10,Low,10000000.0,CASH_OUT of 1.0E7
+R1,Large Cash Transaction,C1092607,Maanav Purohit,Karnataka,Retail,10,Low,6322399.97,CASH_OUT of 6322399.97
+R1,Large Cash Transaction,C0582188,Nakul Sachar,Rajasthan,SME,10,Low,6311409.28,CASH_OUT of 6311409.28
+R1,Large Cash Transaction,C6693737,Balendra Gulati,Uttarakhand,Retail,10,Low,6199009.0,CASH_OUT of 6199009.0
+R1,Large Cash Transaction,C3636868,Dev Anand,Bihar,Retail,10,Low,3912252.81,CASH_OUT of 3912252.81
+R1,Large Cash Transaction,C4976135,Nidra Bajaj,Haryana,Retail,10,Low,3547010.54,CASH_OUT of 3547010.54
+R1,Large Cash Transaction,C0974237,Hemal Pai,Uttarakhand,SME,10,Low,3071270.72,CASH_OUT of 3071270.72
+R1,Large Cash Transaction,C5794163,Adweta Manda,Meghalaya,Retail,10,Low,2232257.71,CASH_OUT of 2232257.71
+R1,Large Cash Transaction,C3247552,Upkaar Brahmbhatt,Jharkhand,SME,10,Low,2194533.79,CASH_OUT of 2194533.79
+R1,Large Cash Transaction,C1841258,Lila Shenoy,Mizoram,Retail,10,Low,2154005.71,CASH_OUT of 2154005.71
+R1,Large Cash Transaction,C0225915,Kritika Devi,Nagaland,Retail,10,Low,2079746.13,CASH_OUT of 2079746.13
+R1,Large Cash Transaction,C5099872,Manbir Pall,Goa,Retail,10,Low,1810044.85,CASH_OUT of 1810044.85
+R1,Large Cash Transaction,C2766352,Jasmit Chandra,Bihar,Retail,10,Low,1665334.68,CASH_OUT of 1665334.68
+R1,Large Cash Transaction,C5720260,Yashawini Lata,Uttar Pradesh,Retail,10,Low,1379501.18,CASH_OUT of 1379501.18
+R1,Large Cash Transaction,C2363221,Kalpit Char,Sikkim,SME,10,Low,1314660.84,CASH_OUT of 1314660.84
+R1,Large Cash Transaction,C1560864,Krisha Ravel,Madhya Pradesh,SME,10,Low,1258818.82,CASH_OUT of 1258818.82
+R1,Large Cash Transaction,C4652599,Chasmum Goyal,Meghalaya,Retail,10,Low,1158396.74,CASH_OUT of 1158396.74
+R1,Large Cash Transaction,C0441454,Abhimanyu Handa,West Bengal,Retail,10,Low,1157971.07,CASH_OUT of 1157971.07
+R1,Large Cash Transaction,C2428355,Ira Zachariah,Mizoram,Retail,10,Low,1102951.39,CASH_OUT of 1102951.39

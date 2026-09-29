@@ -1,0 +1,166 @@
+# Financial Risk & Compliance Analytics Pipeline
+
+Daily batch pipeline that loads millions of payment transactions into Hadoop, cleans them with
+PySpark, runs AML/KYC compliance rules, scores every customer's risk, stores everything in a
+Hive star-schema warehouse, and produces the reports a bank compliance team reviews each morning:
+a suspicious-transaction alert queue, high-risk customers, and rule trends.
+
+**Stack:** Hadoop (HDFS), Hive, PySpark, Spark SQL, Python, Docker. No AI — risk is scored with
+transparent, config-driven rules, the way bank compliance teams work.
+
+---
+
+## Results (2025-01-01 → 2025-01-31 backfill)
+
+| Metric | Value |
+|---|---|
+| Transactions processed | 6,405,791 rows across 31 daily partitions |
+| Rows quarantined by data-quality checks | ~1.55 M (see `docs/sample_outputs/dq_trend_2025-01-31.csv`) |
+| Alerts generated (R1–R8) | see `docs/sample_outputs/rule_trends_2025-01-31.csv` |
+| Rule precision vs labeled fraud | see `docs/sample_outputs/rule_precision_2025-01-31.csv` |
+
+Sample outputs are in `docs/sample_outputs/`.
+
+---
+
+## Architecture
+
+```
+PaySim CSV + generated reference tables
+        │  (Python split into daily files, injected scenarios, dirty rows)
+        ▼
+landing/transactions/txn_date=YYYY-MM-DD/part.csv  ──hdfs dfs -put──►  HDFS /data/raw/...
+                                            │
+                                   Hive RAW external tables (CSV, partitioned by txn_date)
+                                            │  PySpark: cast, hash ids, validate
+                          ┌─────────────────┴───────────────┐
+                          ▼                                 ▼
+                 Hive CLEAN (Parquet)              clean.quarantine (bad rows + reason)
+                                            │  PySpark: 8 compliance rules
+                                            ▼
+                                   alerts.rule_hits (one row per rule hit)
+                                            │  PySpark: weighted scoring
+                                            ▼
+                                   risk.customer_risk_daily (daily + 30-day rolling score)
+                                            │  PySpark: star schema build
+                                            ▼
+                                   Hive WAREHOUSE (fact + SCD2 dimensions)  ──►  SQL reports (CSV)
+```
+
+Layers:
+- **raw** — external CSV tables over the landing zone (or HDFS), partitioned by `txn_date`.
+- **clean** — Parquet: good transactions, quarantine table (one row per failing check + reason),
+  and a daily `dq_summary`.
+- **alerts / risk** — rule hits and daily customer risk scores.
+- **wh** — star schema: `fact_transactions`, `fact_alerts`, `dim_customer` (SCD Type 2),
+  `dim_date`, `dim_rule`, `dim_txn_type`.
+
+## Compliance rules (config-driven — `config/rules.json`)
+
+| Code | Rule | Logic |
+|---|---|---|
+| R1 | Large cash transaction | CASH_IN/CASH_OUT ≥ ₹10,00,000 (FIU-IND CTR threshold) |
+| R2 | Structuring | ≥ 3 transfers of ₹9–10 lakh per sender within 7 days (window function, `rangeBetween`) |
+| R3 | Rapid pass-through | sends ≥ 90% of an amount received within 24 h (self-join with time condition) |
+| R4 | Dormant reactivation | first-ever transaction ≥ ₹5 lakh after 180+ days of inactivity |
+| R5 | Watchlist hit | sender or receiver on watchlist (broadcast join) |
+| R6 | KYC gap | transaction on account with Missing or expired KYC |
+| R7 | High velocity | > 20 outgoing transactions in 1 hour |
+| R8 | Balance drain | transfer emptying ≥ 95% of balance, cash-out by receiver within 6 h |
+
+Daily risk score = sum of weights of distinct rules hit (+10 if KYC category High).
+30-day rolling score drives the band: **Low < 30 ≤ Medium < 70 ≤ High**.
+
+## Dataset
+
+- **Transactions:** [PaySim](https://www.kaggle.com/datasets/ealaxi/paysim1) (6.36 M synthetic
+  mobile-money transactions, 744 hourly steps mapped to 2025-01-01 onward).
+- **Reference tables** (`data_gen/generate_reference.py`, Faker, fixed seed): 9 M customers,
+  KYC state (5 % expired, 2 % missing), 200-entry watchlist.
+- **Injected scenarios** (`data_gen/inject_scenarios.py`, marked `source='injected'`):
+  50 structuring accounts, 40 mule accounts, 30 dormant reactivations, 10 velocity accounts,
+  20 watchlist transactions — PaySim alone has no structuring/pass-through/velocity patterns,
+  so every rule has something to catch.
+- **Dirty rows** (`data_gen/split_daily.py`): duplicates (~0.5 %), negative amounts, null account
+  ids, balance mismatches — the cleaning job quarantines them with reasons.
+
+## How to run
+
+```bash
+# 1. environment
+python3.12 -m venv .venv && .venv/bin/pip install -r requirements.txt
+#   (pyspark wheel bundles Spark + Hadoop client; a JDK 17 is required)
+
+# 2. data
+.venv/bin/python data_gen/inject_scenarios.py
+.venv/bin/python data_gen/generate_reference.py --paysim <paysim.csv>
+.venv/bin/python data_gen/split_daily.py --paysim <paysim.csv>
+
+# 3. run one day end-to-end (clean -> rules -> risk -> warehouse)
+./run_pipeline.sh 2025-01-15
+
+# 4. backfill the whole window + reports
+./backfill.sh 2025-01-01 2025-01-31
+```
+
+Two profiles, same code:
+
+- `PIPELINE_PROFILE=local` (default) — PySpark `local[*]`, embedded Derby Hive metastore,
+  reads the landing folder directly. Great for development; runs on a laptop.
+- `PIPELINE_PROFILE=hadoop` — `docker compose up -d` brings up HDFS (namenode + datanode),
+  Hive metastore (PostgreSQL-backed) and HiveServer2; `run_pipeline.sh` then `hdfs dfs -put`s
+  the day's file and runs the same Spark jobs against `hdfs://` and the remote metastore.
+  Beeline: `beeline -u jdbc:hive2://localhost:10000`.
+
+Daily schedule (cron): `0 2 * * * /path/run_pipeline.sh $(date -d yesterday +\%F)`
+
+Tests (tiny hand-made datasets with known answers per rule):
+
+```bash
+.venv/bin/python -m pytest tests/ -v
+```
+
+## Idempotency
+
+Every job overwrites only the partition for the run date
+(`spark.sql.sources.partitionOverwriteMode=dynamic`), so re-running a day, or the whole backfill,
+is always safe.
+
+## Performance notes
+
+- **Partition pruning:** the raw/clean tables are partitioned by `txn_date`; a one-day query reads
+  exactly one partition directory (visible in `EXPLAIN` / file listing).
+- **CSV → Parquet + Snappy:** raw CSV ≈ 493 MB; the clean Parquet layer is much smaller and
+  columnar, so scans skip columns they don't need.
+- **Broadcast joins:** watchlist (200 rows) and KYC-gap accounts are broadcast, avoiding shuffles
+  against multi-million-row facts.
+- **Window functions over range frames:** R2's 7-day structuring detection uses a range window
+  per sender (`rangeBetween(-7 days, 0)`) instead of a self-join.
+- **Cache:** the alert union is cached once, counted, then written.
+
+## What I'd improve next
+
+- Kafka + Spark Structured Streaming for near-real-time alerts (the rule functions are already
+  DataFrame-based, so they port directly).
+- Watch for too many small partitions: one day = one partition here, but per-hour partitions plus
+  compaction would be the next step at scale.
+- Store quarantine payloads in JSON + register an Avro schema; add Great Expectations-style
+  expectations on top of the DQ summary.
+- Model tuning: rule weights are static; next step is feedback from the alert queue
+  (investigator dispositions) to recalibrate weights.
+
+## Repo map
+
+```
+├── docker-compose.yml        # Hadoop + Hive stack (hadoop profile)
+├── config/rules.json         # all thresholds and weights (no hard-coding in jobs)
+├── data_gen/                 # scenario injection, reference tables, daily split
+├── ingest/load_to_hdfs.sh    # hadoop profile: landing -> HDFS
+├── hive/*.sql                # canonical DDL (raw / clean / alerts+risk / warehouse)
+├── jobs/                     # PySpark jobs + shared helpers (common.py)
+├── reports/                  # SQL reports + run_reports.py (exports CSV)
+├── tests/test_rules.py       # pytest unit tests per rule
+├── run_pipeline.sh           # one day end-to-end
+├── backfill.sh               # whole window + reports
+└── docs/sample_outputs/      # generated report CSVs
+```
